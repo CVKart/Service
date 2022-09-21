@@ -21,7 +21,6 @@ public class AmazonS3ServiceImpl implements AmazonS3Service{
 
     public void addImage(MultipartFile image) throws IOException {
         File localFile=convertToFile(image);
-        System.out.println("Document/"+localFile.getName());
         PutObjectResult data = amazonS3.putObject(
                 bucket,
                 "Document/"+localFile.getName(),
