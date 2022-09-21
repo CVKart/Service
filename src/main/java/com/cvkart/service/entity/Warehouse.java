@@ -1,6 +1,5 @@
 package com.cvkart.service.entity;
 
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -10,19 +9,23 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
-public class Product {
+@SuppressWarnings("unused")
+public class Warehouse {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer productId;
-    private String productName;
-    private String productBrand;
-    private Float productPrice;
-    private Integer productQuantity;
-    private String productCategory;
-    @OneToMany(mappedBy = "product")
+    private Integer warehouseId;
+    private String warehouseRegion;
+    private String warehouseCity;
+    private String warehouseCountry;
+    private String warehouseZip;
+    private Integer warehouseCapacity;
+
+    @OneToMany(mappedBy = "warehouse")
     private Set<WarehouseProduct> warehouseProduct;
+
+
 }

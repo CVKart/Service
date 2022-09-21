@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class ServiceApplication implements CommandLineRunner {
 
-
 	public static void main(String[] args) {
 		SpringApplication.run(ServiceApplication.class, args);
 	}
