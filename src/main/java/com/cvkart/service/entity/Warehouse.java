@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Getter
@@ -24,7 +25,7 @@ public class Warehouse {
     private Integer warehouseCapacity;
 
     @OneToMany(mappedBy = "warehouse")
-    private List<WarehouseProduct> warehouseProduct;
+    private Set<WarehouseProduct> warehouseProduct;
 
 
 }
