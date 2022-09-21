@@ -28,9 +28,9 @@ public class User {
 	@NotNull
     private String userEmail;
 	@NotNull
-    private Float userPassword;
+    private String userPassword;
 	@NotNull
-    private Integer userPhone;
+    private String userPhone;
 	@NotNull
     private char userType = 'c';
 

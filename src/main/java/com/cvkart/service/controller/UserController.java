@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping
-    public void addProduct(@Validated @RequestBody  User user){
+    public void addProduct( @RequestBody  User user){
     	System.out.println(user);
     	userService.addUser(user);
     }
