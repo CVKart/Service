@@ -7,5 +7,5 @@ import com.cvkart.service.entity.User;
 
 @Repository
 public interface UserRepo extends JpaRepository<User,Integer> {
-
+    User findByUserName(String userName);
 }

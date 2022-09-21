@@ -3,6 +3,7 @@ package com.cvkart.service.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,19 +23,22 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
+
+    @Autowired
+    private BCryptPasswordEncoder encoder;
 	
 	@GetMapping
-    public List<User> getAllProducts(){
+    public List<User> getAllUsers(){
         return userService.getAllUsers();
     }
     @GetMapping("/{id}")
-    public User getAllProducts(@PathVariable Integer id){
+    public User getAllUsers(@PathVariable Integer id){
         return userService.getUsersById(id);
     }
 
     @PostMapping
-    public void addProduct( @RequestBody  User user){
-    	System.out.println(user);
+    public void addUser( @RequestBody  User user){
+    	user.setUserPassword(encoder.encode(user.getUserPassword()));
     	userService.addUser(user);
     }
 
