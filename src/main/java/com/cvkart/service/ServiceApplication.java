@@ -10,14 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class ServiceApplication implements CommandLineRunner {
 
 
-	@Autowired
-	private ProductServiceImpl service;
 	public static void main(String[] args) {
 		SpringApplication.run(ServiceApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		System.out.println(service.getAllProducts());
+
 	}
 }
