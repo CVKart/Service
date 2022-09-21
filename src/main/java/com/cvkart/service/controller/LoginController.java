@@ -24,13 +24,12 @@ public class LoginController {
     @PostMapping
     public String login(@RequestBody HashMap<String,Object> data){
         try {
-            System.out.println(data);
             UsernamePasswordAuthenticationToken authInputToken =
-                    new UsernamePasswordAuthenticationToken(data.get("email").toString(), data.get("pwd").toString());
+                    new UsernamePasswordAuthenticationToken(data.get("uname").toString(), data.get("pwd").toString());
 
             authManager.authenticate(authInputToken);
 
-            String token = jwtUtil.generateToken(data.get("email").toString());
+            String token = jwtUtil.generateToken(data.get("uname").toString());
 
             return token;
         }catch (AuthenticationException authExc){
